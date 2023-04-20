@@ -20,7 +20,7 @@ function [q1, q2, q3, q4] = inverseKinematics(xT, yT, zT, q4, q4T)
 e = 5;
 l2 = 10;
 l3 = 8;
-l4 = 5;
+l4 = 9.316;
 z0 = 10;
 
 %Coseno y seno del ángulo q4 dependiendo del tipo
