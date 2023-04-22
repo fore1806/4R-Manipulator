@@ -17,11 +17,11 @@ function [q1, q2, q3, q4] = inverseKinematics(xT, yT, zT, q4, q4T)
 % grados
 
 %Parámetros del Robot
-e = 5;
-l2 = 10;
-l3 = 8;
-l4 = 9.316;
-z0 = 10;
+e = 50e-03;
+l2 = 179.81e-3;
+l3 = 125.3264e-3; %m
+l4 = 63.75e-03;
+z0 = 123.85e-03;
 
 %Coseno y seno del ángulo q4 dependiendo del tipo
 if (q4T == 0) %q4 en radianes
