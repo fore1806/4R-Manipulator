@@ -53,7 +53,7 @@ r = sqrt(xW^2 + yW^2 + (zW-z0)^2);
 gamma = acos((l2^2+r^2-l3^2)/2*r*l2);
 phi = acos((l2^2+l3^2-r^2)/2*l2*l3);
 q2 = beta + gamma;
-q3 = pi - phi;
+q3 = -(pi - phi);
 
 %Se convierten los ángulos a grados hexadecimales
 q1 = q1*(180/pi);
