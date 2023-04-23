@@ -236,7 +236,7 @@ void loop() {
   }*/
 
 
-  |caracterizacion();
+  caracterizacion();
   theta0 = myEnc0.read();
   theta1 = myEnc1.read();
   theta2 = myEnc2.read();
@@ -259,7 +259,7 @@ void loop() {
 
 void caracterizacion() {
   unsigned long currentMillis = millis();
-  int vel = 70;
+  int vel = 100;
   int vel1 = 40;
   int vel2 = 100;
   int t2 = 5200;

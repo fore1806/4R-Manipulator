@@ -42,10 +42,10 @@ BTS7960 motorController(EN1, LPWM1, RPWM1);
 #define RPWM2 8  // Azul
 #define LPWM2 9  // Morado
 //Encoder
-Encoder myEnc2(22, 24);
+Encoder myEnc2(24, 22);
 float position2 = -999;
 //Resolucion
-float resolution2 = 360.0 / (34.6 * 34.02);
+float resolution2 = 360.0 / (34 * 34.02);
 
 //Referencias
 float Ref0 = 0;
@@ -80,6 +80,9 @@ long newP0, newP1, newP2;
 
 int pwmDuty0, pwmDuty1, pwmDuty2 = 0;
 
+//Torques
+float tau1, tau2, tau3 = 0;
+
 
 void setup() {
   Serial.begin(115200);
@@ -105,10 +108,11 @@ void loop() {
 
   controlPDplus();
   Serial.print("Angle: ");
-  Serial.print(position2);
+  Serial.println(position2);
+  /*
   Serial.print("PWM: ");
   Serial.println(cmdPD2);  
-
+*/
   /*
   int vel = 200;
 
@@ -211,9 +215,9 @@ void controlPDplus() {
     }
 
     if (Cmd2 >= 0) {
-      sentido2 = true;
-    } else {
       sentido2 = false;
+    } else {
+      sentido2 = true;
     }
 
     //Se obtiene el valor de cmd positivo
@@ -240,6 +244,10 @@ void controlPDplus() {
   }
 }
 
+
+void torque (float q1, float q2, float q3, float qp1, float qp2, float qp3, float qpp1, float qpp2, float qpp3) {
+  
+}
 
 
 void setMotor(int motor, int vel, bool dir) {
